@@ -1,24 +1,21 @@
-import { Rate } from 'antd';
 import * as React from 'react';
 import './App.scss';
+import TodoListComponent from "./TodoListComponent";
+import TodoModel from "./TodoModel";
 
-import logo from './logo.svg';
+const todoListHolder: TodoModel[] = [
+    {id: 1, date: Date.now(), todo: 'Say hello', checked: false},
+    {id: 2, date: Date.now(), todo: 'Say hello', checked: false}
+    ];
 
 class App extends React.Component {
-  public render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <Rate character="6"/>
-      </div>
-    );
-  }
+    public render() {
+        return (
+            <div className="App">
+                <TodoListComponent todoList={todoListHolder}/>
+            </div>
+        );
+    }
 }
 
 export default App;
