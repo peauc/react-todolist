@@ -1,6 +1,6 @@
 export default interface TodoModel {
     todo: string,
     checked: boolean,
-    date: number,
+    date: Date,
     id: number
 }

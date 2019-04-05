@@ -4,8 +4,8 @@ import TodoListComponent from "./TodoListComponent";
 import TodoModel from "./TodoModel";
 
 const todoListHolder: TodoModel[] = [
-    {id: 1, date: Date.now(), todo: 'Say hello', checked: false},
-    {id: 2, date: Date.now(), todo: 'Say hello', checked: false}
+    {id: 1, date: new Date(), todo: 'Say hello', checked: false},
+    {id: 2, date: new Date(), todo: 'Say hello', checked: false}
     ];
 
 class App extends React.Component {

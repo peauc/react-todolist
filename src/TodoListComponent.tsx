@@ -3,6 +3,8 @@ import * as React from 'react'
 import TodoComponent from './TodoComponent'
 import TodoModel from './TodoModel'
 
+import './TodoList.scss'
+
 interface Props {
     todoList: TodoModel[],
 }
@@ -17,10 +19,12 @@ export default class TodoListComponent extends React.Component<Props, State> {
         this.state = {todoList: this.props.todoList };
     }
     public render() {
-        const todos = this.state.todoList.map((todo) => <TodoComponent key={todo.id} id={todo.id} date={todo.date} checked={todo.checked} todo={todo.todo}/>);
+        const todos = this.state.todoList.map((todo) => <li key={todo.id}><TodoComponent id={todo.id} date={todo.date} checked={todo.checked} todo={todo.todo}/></li>);
         return (
-            <div className="Todolist">
-                {todos}
+            <div className="todolist-container">
+                <ul className="todolist">
+                    {todos}
+                </ul>
             </div>
         )
     }
